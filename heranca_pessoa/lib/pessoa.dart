@@ -11,8 +11,8 @@ class Pessoa {
 
   Pessoa({this.nome});
 
-  String? imprimeDados() {
-   return nome;
+  void imprimeDados() {
+    print('Nome: $nome');
   }
 }
 
@@ -22,8 +22,9 @@ class PessoaFisica extends Pessoa {
   PessoaFisica({String? nome, this.cpf}) : super(nome: nome);
 
   @override
-   String? imprimeDados() {
-   return '$nome ' + ' $cpf';
+  void imprimeDados() {
+    super.imprimeDados();
+    print('cpf: $cpf');
   }
 }
 
@@ -33,7 +34,10 @@ class PessoaJuridica extends Pessoa {
   PessoaJuridica({String? nome, this.cnpj}) : super(nome: nome);
 
   @override
-  String? imprimeDados() {
-   return '$nome ' + ' $cnpj';
+  void imprimeDados() {
+    super.imprimeDados();
+    print('cnpj: $cnpj');
   }
 }
+
+//poderia ser um metodo void passando um print dentro

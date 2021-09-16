@@ -11,6 +11,8 @@ class Funcionario {
   String? nome;
   double salarioBase = 0;
 
+  Funcionario({this.nome, this.salarioBase = 0});
+
   double salarioFinal() {
     return salarioBase;
   }
@@ -18,6 +20,9 @@ class Funcionario {
 
 class Gerente extends Funcionario {
   double bonus = 3000;
+
+  Gerente({String? nome, double salarioBase = 0})
+      : super(nome: nome, salarioBase: salarioBase);
 
   @override
   double salarioFinal() {
@@ -28,6 +33,9 @@ class Gerente extends Funcionario {
 class Secretaria extends Funcionario {
   double bonus = 600;
 
+  Secretaria({String? nome, double salarioBase = 0})
+      : super(nome: nome, salarioBase: salarioBase);
+
   @override
   double salarioFinal() {
     return super.salarioFinal() + bonus;
@@ -35,6 +43,9 @@ class Secretaria extends Funcionario {
 }
 
 class Telefonista extends Funcionario {
+  Telefonista({String? nome, double salarioBase = 0})
+      : super(nome: nome, salarioBase: salarioBase);
+
   @override
   double salarioFinal() {
     return super.salarioFinal();
